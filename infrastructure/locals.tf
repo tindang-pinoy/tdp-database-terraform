@@ -10,10 +10,5 @@ locals {
       owner         = var.project_owner
     }
   }
-  application_name  = var.project_name
-  handler_image_tag = "${local.application_name}-${var.lambda_version}"
-
-  handler_environments = {
-
-  }
+  application_name = var.project_name
 }
