@@ -3,7 +3,7 @@ locals {
     project_owner = var.default_values.project_owner
     project_version = var.default_values.project_version
     
-    tags = merge(var.default_values.tags)
+    tags = var.default_values.tags
 
     allocated_storage = 20 # This value is in GB
     storage_type = "gp2"
@@ -27,4 +27,6 @@ locals {
     final_snapshot_identifier = "${local.project_name}-final-snapshot"
     
     enabled_cloudwatch_logs_exports = ["postgresql", "upgrade"]
+
+    iam_database_authentication_enabled = true
 }
